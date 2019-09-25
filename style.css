@@ -1,0 +1,334 @@
+
+/*General style */
+body{
+	background-color: white;
+	color: white;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-size: 10px;
+}
+
+h1{
+	font-family: "Rubik", sans-serif;
+	font-size: 1.8rem;
+	margin : 0 0 0.5rem 0;
+}
+
+p{
+	font-size: 0.9rem;
+}
+
+a{
+	color: inherit;
+	text-decoration: none;
+}
+
+a:visited {
+	color: inherit;
+}
+
+#gridIntro p {
+	text-indent: 1em;
+}
+
+#gridIntro p::first-letter {
+	font-size: 1.4rem;
+}
+
+.grid{
+	height: calc(100vh - 6em);
+	padding: 3em;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	grid-gap: 1rem;
+}
+
+.easterEgg {
+	height:100%;
+	max-height: 100px;
+}
+.eggFound {
+	animation: tada 2s linear;
+}
+
+section{
+	border-radius: 8px;
+	padding: 1rem;
+	z-index: 10;
+}
+
+/*Section colors*/
+.navy{
+	background-color: #1A3A50;
+	color: white;
+}
+.blue{
+	background-color: #2D6B96;
+	color: white;
+}
+.orange{
+	background-color: #F5A67E;
+	color: #1A3A50;
+}
+.yellow{
+	background-color: #FFE3A4;
+	color: #1A3A50;
+}
+
+/*Section heights*/
+#gridIntro{
+	grid-column: 1 / 3;
+	grid-row: 1 / 4;
+}
+
+#egg1{
+	grid-row: 1 / 3;
+	transition: transform 1s ease-in-out;
+}
+#egg1 a{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+#focusEgg{
+	max-height: 50px;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+#egg1:hover{
+	transform: scale(1.05);
+	transition: transform 1s ease-in-out;
+}
+#egg1 a:active #focusEgg{
+	opacity: 1;
+	transition: opacity 0.5s ease-in-out;
+}
+
+#counter{
+	grid-column: 4 / 6;
+}
+
+#scrollEgg{
+	grid-column: 1 / 3;
+	grid-row: 4 / 6;
+	overflow-x: scroll;
+}
+
+#invisible{
+	grid-column: 4 / 5;
+	grid-row: 2 / 3;
+}
+#invisible .easterEgg{
+	opacity:0;
+	transition: opacity 2s ease-in-out;
+}
+#invisible:hover .easterEgg{
+	opacity: 1;
+	transition: opacity 1s ease-in-out;
+}
+
+
+#scrollEgg #scrollBox{
+	width: 300%;
+	padding-right: 2rem;
+	display: flex;
+	justify-content: flex-end;
+}
+
+#middle{
+	grid-column : 3 / 5;
+	grid-row: 3 / 5;
+	display: flex;
+	justify-content: center;
+}
+
+#hidden{
+	grid-column: 5 / 7;
+	grid-row: 2 / 3;
+	display: flex;
+	justify-content: space-around;
+}
+#hiddenEgg{
+	display: none;
+}
+#unvisibleEgg{
+	visibility: hidden;
+}
+
+#social{
+	grid-column: 2 / 3;
+	grid-row: 6 / 7;
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+#social i{
+	font-size: 4rem;
+	display: block;
+}
+#behindEgg{
+	position: absolute;
+	top : 1rem;
+	left: 1rem;
+	z-index: -1;
+}
+#behindEgg:target {
+	transform: rotate(-30deg) translateX(-4rem);
+	transition: transform 1.5s ease-in-out;
+}
+
+#linkBehind{
+	grid-column: 1 / 2;
+	grid-row: 6 / 7;
+	color: #F5A67E;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+}
+#linkBehind i{
+	font-size: 2rem;
+	display: block;
+}
+
+
+#contact{
+	grid-column : 3 / 7;
+	grid-row: 6 / 7;
+}
+
+#skills{
+	grid-column: 5 / 7;
+	grid-row: 3 / 6;
+}
+
+
+/* TADA Animation for the eggs */ 
+
+@-webkit-keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+
+/* ---- Scrollbars ---- */
+html::-webkit-scrollbar-track{
+	opacity : 0;
+}
+html::-webkit-scrollbar{
+	width: 10px;
+	height: 10px;
+}
+html::-webkit-scrollbar-thumb{
+	border-radius: 30px;
+	opacity : 0.3;
+}
+
+

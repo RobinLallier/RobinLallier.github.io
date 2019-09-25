@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:700|Montserrat:300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d7a3d54a7e.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Portfolio website"
+    />
+    <link rel="manifest" href="./manifest.json" />
+    
+    <title>Robin's Easter Eggs</title>
+
+    <script>
+      let counter = 0;
+      function clickCounter(id) {
+        counter++;
+        document.getElementById("result").innerHTML = counter;
+        let elem = document.getElementById(id);
+        elem.classList.add("eggFound");
+        setTimeout(function() {elem.parentNode.removeChild(elem);}, 2000);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="grid">
+      <!-- START First Row -->
+      <section class="navy" id="gridIntro">
+        <h1>Robin's Easter Eggs</h1>
+        <p>Hello stranger, and welcome to this little website. I've hidden multiple easter eggs throughout this page, using CSS and HTML tricks I've learnt along the way. In order to find an easter egg, you simply need to click it once. There are up to X eggs, each one necessiting different interactions with the website. Try clicking the one in the middle to begin with!</p>
+      </section>
+
+      <section class="blue" id="egg1">
+        <a href="#">
+          <img class="easterEgg" src="./easter1.png" alt="Easter Egg" id="focusEgg" onclick="clickCounter('focusEgg')"/>
+        </a>
+      </section>
+
+      <section class="yellow" id="counter">
+        <h1>Total eggs found : <span id="result">0</span>/5</h1>
+      </section>
+      <!-- END First Row -->
+
+      <!-- INVISIBLE EGG -->
+      <section id="invisible">
+        <img class="easterEgg" src="./easter.png" alt="Easter Egg" id="invisibleEgg" onclick="clickCounter('invisibleEgg')"/>
+      </section>
+
+      <!-- START 2nd Row -->
+      <section class="orange" id="scrollEgg">
+        <div id="scrollBox">
+          <img class="easterEgg" id="scrollXEgg" src="./easter.png" alt="Easter Egg"  onclick="clickCounter('scrollXEgg')"/>
+        </div>
+      </section>
+
+      <section class="yellow" id="middle">
+        <img class="easterEgg" id="middleEgg" src="./easter1.png" alt="Easter Egg" onclick="clickCounter('middleEgg')" />
+      </section>
+
+      <section class="navy" id="hidden">
+      </section>
+      <!-- END 2nd Row -->
+
+      <!-- START 3rd Row -->
+      <section id="linkBehind">
+        <a href="#behindEgg" ><i class="fas fa-bell"></i></a>
+      </section>
+
+      <section class="yellow" id="social">
+        <a href="https://github.com/RobinLallier" target="_blank"><i class="fab fa-github-square"></i></a>
+        <a href="https://www.linkedin.com/in/robin-lallier-57069b119/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <img class="easterEgg" id="behindEgg" src="./easter1.png" alt="Easter Egg"  onclick="clickCounter('behindEgg')"/>
+      </section>
+
+      <section class="blue" id="contact">
+        <h1>Enjoyed the hunt ?</h1>
+        <p>I’m currently looking for jobs or internships in front-end development. Want to discuss an opportunity, or give me new ways to hide easter eggs here? 
+          <adress><a href="mailto:robin.lallier29@gmail.com" target="_blank"><u>Reach out for me!</u></a></adress>
+        </p>
+      </section>
+
+      <section class="orange" id="skills">
+        <h1>PAST PROJECTS</h1>
+        
+      </section>
+      <!-- END 3nd Row -->
+
+    </div>
+  </body>
+</html>
