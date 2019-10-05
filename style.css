@@ -55,7 +55,6 @@ a:visited {
 section{
 	border-radius: 8px;
 	padding: 1rem;
-	z-index: 10;
 }
 
 /*Section colors*/
@@ -164,17 +163,19 @@ section{
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	z-index: 100;
 }
 #social i{
 	font-size: 4rem;
 	display: block;
 }
-#behindEgg{
-	position: absolute;
-	top : 1rem;
-	left: 1rem;
-	z-index: -1;
+
+
+#behindSection {
+	grid-column: 2 / 3;
+	grid-row: 6 / 7;
 }
+
 #behindEgg:target {
 	transform: rotate(-30deg) translateX(-4rem);
 	transition: transform 1.5s ease-in-out;
