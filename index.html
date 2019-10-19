@@ -7,12 +7,32 @@
     <script src="https://kit.fontawesome.com/d7a3d54a7e.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Portfolio website"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
     <link rel="manifest" href="./manifest.json" />
     
+    <!-- Primary Meta Tags -->
+    <title>Robin's Easter Eggs</title>
+    <meta name="title" content="Robin's Easter Eggs">
+    <meta name="description" content="Fun little website designed to display my previous work and find an internship opportunity!">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://robinlallier.github.io">
+    <meta property="og:title" content="Robin's Easter Eggs">
+    <meta property="og:description" content="Fun little website designed to display my previous work and find an internship opportunity!">
+    <meta property="og:image" content="https://robinlallier.github.io/caption.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://robinlallier.github.io">
+    <meta property="twitter:title" content="Robin's Easter Eggs">
+    <meta property="twitter:description" content="Fun little website designed to display my previous work and find an internship opportunity!">
+    <meta property="twitter:image" content="https://robinlallier.github.io/caption.png">
+
     <title>Robin's Easter Eggs</title>
 
     <script>
@@ -23,12 +43,11 @@
           eggList.push(id);
           let elem = document.getElementById(id);
           elem.classList.add("eggFound");
+          counter++;
+          document.getElementById("result").innerHTML = counter;
           setTimeout(function() {
             elem.parentNode.removeChild(elem);
-            counter++;
-            document.getElementById("result").innerHTML = counter;
           }, 2000);
-          
         }
       }
     </script>
@@ -37,7 +56,7 @@
     <div class="grid">
       <section class="navy" id="gridIntro">
         <h1>Robin's Easter Eggs</h1>
-        <p>Hello stranger, and welcome to this little website. I've hidden multiple easter eggs throughout this page, using CSS and HTML tricks I've learnt along the years. There are up to 5 eggs to find, each one necessiting different interactions with the website. Try clicking the one in the middle to begin with! <span id="introHidden">This project was designed for desktop-first, some of the tricks won't work on mobiles. </span></p>
+        <p>Hello stranger, and welcome to this little website. I've hidden multiple easter eggs throughout this page, using CSS and HTML tricks I've learnt along the years. There are up to 5 eggs to find, each one necessiting different interactions with the website. Try clicking the visible one to begin with! <u id="introHidden">This project was designed for desktop-first, some of the tricks won't work on mobiles. </u></p>
       </section>
 
       <section class="yellow" id="middle">
@@ -64,10 +83,28 @@
         <img class="easterEgg" src="./assets/easter.png" alt="Easter Egg" id="invisibleEgg" onclick="clickCounter('invisibleEgg')"/>
       </section>
 
-      
+      <section class="orange" id="skills">
+        <h1>PAST PROJECTS</h1>
+        <div class="innerGrid">
+          <figure id="innerSuricate" onclick="openModal('modalSuricate')">
+            <img src="./assets/suricate2.png" alt="suricate-nat project" />
+            <legend>Suricate-Nat</legend>
+          </figure>
+          <figure id="innerDOTK" onclick="openModal('modalDOTK')">
+            <img src="./assets/dotk.png" alt="DOTK project" />
+            <legend>DOTK</legend>
+          </figure>
+          <figure id="innerWeazer" onclick="openModal('modalWeazer')">
+            <img src="./assets/wanted2.png" alt="Weazer project" />
+            <legend>Weazer</legend>
+          </figure>
+          <figure id="innerEcotravel" onclick="openModal('modalEcotravel')">
+            <img src="./assets/ecotravel.png" alt="Ecotravel project" />
+            <legend>Ecotravel</legend>
+          </figure>
+        </div>
+      </section>
 
-      
-      
       <section id="linkBehind">
         <a href="#behindEgg" ><i class="fas fa-bell"></i></a>
       </section>
@@ -82,32 +119,6 @@
         <img class="easterEgg" id="behindEgg" src="./assets/easter.png" alt="Easter Egg"  onclick="clickCounter('behindEgg')"/>
       </section>
 
-      <section class="orange" id="skills">
-        <h1>PAST PROJECTS</h1>
-        <div class="innerGrid">
-          <figure id="innerSuricate">
-            <img src="./assets/suricate2.png" alt="suricate-nat project" />
-            <legend>Suricate-Nat</legend>
-          </figure>
-          <figure id="innerDOTK">
-            <a href="https://robinlallier.github.io/dotk/" target="_blank" >
-              <img src="./assets/dotk.png" alt="DOTK project" />
-              <legend>DOTK</legend>
-            </a>
-          </figure>
-          <figure id="innerWeazer">
-            <img src="./assets/wanted2.png" alt="Weazer project" />
-            <legend>Weazer</legend>
-          </figure>
-          <figure id="innerEcotravel">
-            <a href="https://robinlallier.github.io/ecoTravel/" target="_blank">
-              <img src="./assets/ecotravel.png" alt="Ecotravel project" />
-              <legend>Ecotravel</legend>
-            </a>
-          </figure>
-        </div>
-      </section>
-
       <section class="navy" id="contact">
         <h1>Enjoyed the hunt ?</h1>
         <p>I’m currently looking for jobs or internships in front-end development. Want to discuss an opportunity, or give me new ways to hide easter eggs here? 
@@ -116,5 +127,96 @@
       </section>
 
     </div>
+
+    <div class="modal">
+
+      <div class="modal-content" id="modalDOTK">
+        <div class="modal-figure">
+          <a href="https://robinlallier.github.io/dotk/" target="_blank" >
+            <img src="./assets/dotk.png" alt="DOTK project" />
+          </a>
+        </div>
+        <div>
+          <i class="fas fa-times" onclick="closeModal('modalDOTK')"></i>
+          <article>
+            <h2><a href="https://robinlallier.github.io/dotk/" target="_blank" >Descriptive Ontology of Territorial Knowledge</a></h2>
+            <p><u>Technologies :</u> React, D3.js, Sketch</p>
+            <p><u>Nature :</u> Study project</p>
+            <p><u>Description :</u> Built datavizualisation sketches to represent PhD work of Amer Ezoji. Then built a website using d3.js to showcase his work.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="modal-content" id="modalWeazer">
+        <div class="modal-figure">
+          <img src="./assets/wanted2.png" alt="Weazer project" />
+        </div>
+        <div>
+          <i class="fas fa-times" onclick="closeModal('modalWeazer')"></i>
+          <article>
+            <h2>Weazer</h2>
+            <p><u>Technologies :</u> Sketch, inVision, React Native</p>
+            <p><u>Nature :</u> Freelance project</p>
+            <p><u>Description :</u> Delivered a first proof of concept and inVision prototype to a client. Later, contributed to the React Native app development in collaboration with the developer team.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="modal-content" id="modalSuricate">
+        <div class="modal-figure">
+          <img src="./assets/suricate2.png" alt="suricate-nat project" />
+        </div>
+        <div>
+          <i class="fas fa-times" onclick="closeModal('modalSuricate')"></i>
+          <article>
+            <h2>Suricate-Nat</h2>
+            <p><u>Technologies :</u> Sketch</p>
+            <p><u>Nature :</u> Freelance project</p>
+            <p><u>Description :</u> UX and ergonomic study of the existing website Suricate-nat. Concept and mockup integrating feedback from the former study.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="modal-content" id="modalEcotravel">
+        <div class="modal-figure">
+          <a href="https://robinlallier.github.io/ecotravel/" target="_blank">
+            <img src="./assets/ecotravel.png" alt="Ecotravel project" />
+          </a>
+        </div>
+        <div>
+          <i class="fas fa-times" onclick="closeModal('modalEcotravel')"></i>
+          <article>
+            <h2><a href="https://robinlallier.github.io/ecotravel/" target="_blank">Ecotravel</a></h2>
+            <p><u>Technologies :</u> React, Node.js, HTTP request, API</p>
+            <p><u>Nature :</u> Freelance project</p>
+            <p><u>Description :</u> Ecotravel is a no-database service that allows traveler to compare different solutions (mostly train, car, carpooling or bike) and their ecological footprint. It relies on multiple external API and gives a non-arbitrary comparison between these different solutions.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+  <script>
+    let modalBack = document.getElementsByClassName('modal')[0];
+
+    function openModal(modalId){
+      let modalContent = document.getElementById(modalId);
+      modalBack.style.display = "block";
+      modalContent.style.display = "flex";
+    }
+
+    function closeModal(modalId){
+      let modalContent = document.getElementById(modalId);
+      modalBack.style.display = "none";
+      modalContent.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modalBack) {
+        modalBack.style.display = "none";
+      }
+    }
+
+
+  </script>  
   </body>
 </html>
