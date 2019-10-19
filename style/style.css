@@ -1,4 +1,4 @@
-
+/* ---- Responsive */
 .grid{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -6,42 +6,44 @@
 	padding: 0.5rem;
 	grid-gap: 0.4rem;
 }
-#gridIntro{
+@media (max-width: 800px){
+	#gridIntro{
 	grid-column: 1 / 3;
-}
-#middle{
-	grid-column : 1 / 2;
-	grid-row: 2 / 3;
-}
-#invisible{
-	grid-column: 2 / 3;
-	grid-row: 2 / 3;
-}
-#counter{
-	grid-column: 1 / 3;
-	grid-row: 3 / 4;
-}
-#egg1{
-	grid-column: 1 / 2;
-	grid-row: 4 / 5;
-}
-#scrollEgg{
-	grid-column: 2 / 3;
-	grid-row: 4 / 5;
-}
-#contact{
-	grid-column : 1 / 3;
-}
-#skills{
-	grid-column : 1 / 3;
-}
-#social{
-	grid-column: 2 / 3;
-	grid-row: 6 / 7;
-}
-#behindSection {
-	grid-column: 2 / 3;
-	grid-row: 6 / 7;
+	}
+	#middle{
+		grid-column : 1 / 2;
+		grid-row: 2 / 3;
+	}
+	#invisible{
+		grid-column: 2 / 3;
+		grid-row: 2 / 3;
+	}
+	#counter{
+		grid-column: 1 / 3;
+		grid-row: 3 / 4;
+	}
+	#egg1{
+		grid-column: 1 / 2;
+		grid-row: 4 / 5;
+	}
+	#scrollEgg{
+		grid-column: 2 / 3;
+		grid-row: 4 / 5;
+	}
+	#contact{
+		grid-column : 1 / 3;
+	}
+	#skills{
+		grid-column : 1 / 3;
+	}
+	#social{
+		grid-column: 2 / 3;
+		grid-row: 6 / 7;
+	}
+	#behindSection {
+		grid-column: 2 / 3;
+		grid-row: 6 / 7;
+	}
 }
 
 /*General style */
